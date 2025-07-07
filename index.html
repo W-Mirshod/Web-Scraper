@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Scraper</title>
-    <link rel="icon" type="image/png" href="https://cdn4.iconfinder.com/data/icons/internet-and-digital-marketing-1-1/66/78-512.png" />
+    <link rel="icon" type="image/png" href="https://w-mirshod.com/assets/Mirshod-DsysRYlY.png" />
     <link rel="stylesheet" href="style.css">
     
     <meta property="og:title" content="Web Scraper Tool" />
@@ -21,13 +21,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Web Scraper</h1>
-        <form id="scrape-form">
-            <input type="text" id="url" name="url" placeholder="Enter URL" required>
-            <button type="submit">Scrape</button>
+        <h1 class="title">Web Scraper</h1>
+        <form id="scrape-form" class="scrape-form">
+            <input type="text" id="url" name="url" placeholder="Enter URL" required class="input-url">
+            <button type="submit" class="scrape-btn">Scrape</button>
         </form>
-        <div id="result"></div>
+        <div id="result" class="result-box"></div>
     </div>
+    <footer class="footer-brand">W Mirshod</footer>
     <script>
     const form = document.getElementById('scrape-form');
     const resultDiv = document.getElementById('result');
