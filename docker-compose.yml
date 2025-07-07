@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  expense-tracker:
+    build: .
+    container_name: web-scraper
+    expose:
+      - "80"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true

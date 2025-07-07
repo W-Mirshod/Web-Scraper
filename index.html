@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Scraper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Web Scraper</h1>
+        <form id="scrape-form">
+            <input type="text" id="url" name="url" placeholder="Enter URL" required>
+            <button type="submit">Scrape</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+    const form = document.getElementById('scrape-form');
+    const resultDiv = document.getElementById('result');
+    form.onsubmit = async (e) => {
+        e.preventDefault();
+        resultDiv.textContent = 'Loading...';
+        const url = document.getElementById('url').value;
+        const res = await fetch('/scrape', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({url})
+        });
+        const data = await res.json();
+        if (data.error) {
+            resultDiv.textContent = data.error;
+        } else {
+            resultDiv.textContent = data.text;
+        }
+    };
+    </script>
+</body>
+</html>
