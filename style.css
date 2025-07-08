@@ -94,6 +94,43 @@ body {
     background: transparent;
 }
 
+.dark {
+    background: #181a1b !important;
+    color: #e0e0e0 !important;
+}
+.dark .container {
+    background: #23272a !important;
+    color: #e0e0e0 !important;
+}
+.dark input, .dark textarea, .dark input[type="text"] {
+    background: #23272a !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #444 !important;
+}
+.dark .scrape-btn, .dark button {
+    background: #444 !important;
+    color: #e0e0e0 !important;
+}
+.dark .result-box, .dark #result {
+    background: #23272a !important;
+    color: #e0e0e0 !important;
+    border-color: #444 !important;
+}
+.theme-switch {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.dark .theme-switch {
+    background: #23272a;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
 @media (max-width: 600px) {
     .container {
         max-width: 98vw;

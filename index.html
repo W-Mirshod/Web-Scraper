@@ -29,6 +29,7 @@
         <div id="result" class="result-box"></div>
     </div>
     <footer class="footer-brand">W Mirshod</footer>
+    <button id="theme-switch" class="theme-switch" style="position:fixed;top:1rem;right:1rem;z-index:1000;">🌙</button>
     <script>
     const form = document.getElementById('scrape-form');
     const resultDiv = document.getElementById('result');
@@ -48,6 +49,24 @@
             resultDiv.textContent = data.text;
         }
     };
+
+    const themeBtn = document.getElementById('theme-switch');
+    const setTheme = (mode) => {
+        if (mode === 'dark') {
+            document.body.classList.add('dark');
+            themeBtn.textContent = '☀️';
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark');
+            themeBtn.textContent = '🌙';
+            localStorage.setItem('theme', 'light');
+        }
+    };
+    themeBtn.onclick = () => {
+        const isDark = document.body.classList.contains('dark');
+        setTheme(isDark ? 'light' : 'dark');
+    };
+    if (localStorage.getItem('theme') === 'dark') setTheme('dark');
     </script>
 </body>
 </html>
